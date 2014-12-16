@@ -1,17 +1,19 @@
 {
-  "name": "mofo-issues",
+  "name": "mofo-mentions",
   "version": "0.0.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/davidascher/issue-handler.git"
   },
   "scripts": {
-    "start": "node app.js"
+    "start": "echo 'starting' && node app.js"
   },
   "dependencies": {
     "firebase": "^2.0.6",
     "habitat": "^3.1.0",
     "hapi": "^8.0.0",
     "request": "^2.51.0"
+  },
+  "devDependencies": {
   }
 }
