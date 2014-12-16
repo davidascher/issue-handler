@@ -6,7 +6,7 @@
     "url": "https://github.com/davidascher/issue-handler.git"
   },
   "scripts": {
-    "start": "echo 'starting' && node app.js"
+    "start": "node app.js"
   },
   "dependencies": {
     "firebase": "^2.0.6",

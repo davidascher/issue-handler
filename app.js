@@ -1,10 +1,8 @@
-console.log('starting the app');
 var Hapi = require('hapi');
 var Firebase = require('firebase');
 var ref = new Firebase('https://debt.firebaseIO.com/');
 var request = require('request')
 
-console.log('loading an environment');
 var habitat = require('habitat');
 habitat.load('.env');
 
@@ -14,7 +12,6 @@ var firebase_secret = env.get('secret');
 var github = new habitat('github');
 var token = github.get('token');
 
-console.log("about to auth with firebase");
 ref.authWithCustomToken(firebase_secret, function(error, authData) {
   if (error) {
     console.log("Login Failed!", error);
@@ -37,7 +34,6 @@ server.connection({
     host: '0.0.0.0', 
     port: process.env.PORT || 8000
 });
-console.log(process.env.PORT)
 
 // Add the route
 server.route({
