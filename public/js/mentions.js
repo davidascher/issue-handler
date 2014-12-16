@@ -1,13 +1,8 @@
 /** @jsx React.DOM */
 
-var githubbers = {};
-
 var GitHubPerson = React.createClass({
   getInitialState: function() {
     // We are given a github name
-    if (githubbers[name]) {
-      return githubbers[name];
-    }
     return {
       username: '',
       name: '',
@@ -27,17 +22,11 @@ var GitHubPerson = React.createClass({
         }
         if (this.isMounted()) {
           this.setState({
-            username: data.login,
-            avatar_url: data.avatar_url,
-            html_url: data.html_url,
-            name: data.name
-          });
-        }
-        githubbers[handle] = {
           username: data.login,
           avatar_url: data.avatar_url,
           name: data.name
-        };
+        });
+        }
       }.bind(this),
       error: function(data, error) {
         console.log("GOT ERROR", error, data)

@@ -53,7 +53,6 @@ var parseComment = function(repository, issue, comment, patchComment) {
     var asks_of_author = snapshot.val();
     for (var key in asks_of_author) {
       var ask = asks_of_author[key];
-      console.log(ask, ask.issue_id, issue.id)
       if (ask.issue_id == issue.id) {
         // removing an ask
         asks_ref.child(key).remove();
