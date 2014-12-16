@@ -1,3 +1,4 @@
+console.log('starting the app');
 var Hapi = require('hapi');
 var Firebase = require('firebase');
 var ref = new Firebase('https://debt.firebaseIO.com/');
