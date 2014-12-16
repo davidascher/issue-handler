@@ -35,7 +35,7 @@ asks.once('value', function(snapshot) {
 var server = new Hapi.Server();
 server.connection({ 
     host: 'localhost', 
-    port: 8000 
+    port: process.env.PORT || 8000
 });
 
 // Add the route
