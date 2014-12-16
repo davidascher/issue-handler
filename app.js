@@ -34,7 +34,7 @@ asks.once('value', function(snapshot) {
 // Create a server with a host and port
 var server = new Hapi.Server();
 server.connection({ 
-    host: 'localhost', 
+    // host: 'localhost', 
     port: process.env.PORT || 8000
 });
 
