@@ -1,0 +1,15 @@
+img.avatar {
+  width: 32px;
+  height: 32px;
+  float: left;
+  margin-left: -12px;
+  margin-right: 12px;
+}
+
+label {
+  display: inline;
+}
+
+#obligations li {
+  list-style: none;
+}

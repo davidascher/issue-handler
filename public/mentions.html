@@ -27,6 +27,14 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/favicon.png" />
 
+  <script src="js/react/react.js"></script>
+  <script src="js/react/JSXTransformer.js"></script>
+  <script src="js/firebase/firebase.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/reactfire/dist/reactfire.min.js"></script>
+  <script src="js/mentions.js" type="text/jsx"></script>
+  <script src="js/app.js" type="text/jsx"></script>
+
 </head>
 <body>
 
@@ -34,24 +42,10 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
     <div class="row">
-      <div class="one-half column" style="margin-top: 3em">
-        <h4>The MoFo Mentions App</h4>
-        <p>This service is a webhook that you can associate with a Github repo or organization, and whose
-        purpose in life is to help you figure out what other githubbers have asked you for, that you may not
-        know about.</p>
-        <p>It was created because one of the features of Bugzilla that I missed in Github Issues
-        is the ability to flag someone as needing to review something or give feedback on a comment.</p>
-        <p>
-        To see who is waiting for your input, type in your github id:
-        <form action="/mentions.html?handle=" method="get">
-          <div>
-            <label for="handle">github nickname:</label>
-            <b>@</b><input id="handle" type="text" name="handle" placeholder="davidascher">
-          </div>  
-          <input type="submit" value="Add">
-        </form>
-          
-        </p>
+      <div class="column" style="margin-top: 1em">
+      <h2>Things that people expect from <b>@<span id="handle"/></b></h2>
+        <div id="obligations">
+        </div>
       </div>
     </div>
   </div>

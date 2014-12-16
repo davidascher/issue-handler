@@ -165,6 +165,42 @@ server.route({
     }
 });
 
+
+var getUserData = function(username, next) {
+  var url = "https://api.github.com/users/" + username;
+  url += "?access_token="+encodeURIComponent(token);
+  var options = {
+      url: url,
+      headers: {
+          'User-Agent': 'NodeJS HTTP Client'
+      }
+  };
+  request.get(options, function(err, ret, body) {
+    if (err) {
+      next(err);
+    } else {
+      next(null, JSON.parse(body));
+    }
+  });
+}
+
+var SECOND = 1000;
+server.method('getUserData', getUserData, {
+  cache: {
+    expiresIn: 120 * SECOND
+  }
+});
+
+server.route({
+  method: 'GET',
+  path: '/user/{username*}',
+  handler: function (req, reply) {
+    server.methods.getUserData(req.params.username, function(error, result) {
+      reply(error || result);
+    });
+  }
+})
+
 server.route({
     method: 'GET',
     path: '/{param*}',
